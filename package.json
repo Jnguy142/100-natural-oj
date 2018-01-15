@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Jnguy142/100-natural-oj#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "mongoose": "^4.12.5",
     "path": "^0.12.7"
   }
 }
