@@ -30,3 +30,7 @@ module.exports.updateManufacturer = function(id, manufacturer, options, callback
     };
     Manufacturer.findOneAndUpdate(query, update, options, callback);
 }
+
+module.exports.findByManufacturerId = function(id, callback) {
+    Manufacturer.findById(id, callback);
+}

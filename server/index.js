@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const Manufacturer = require('../models/manufacturers.js');
 const Brand = require('../models/brands.js');
+const routes = require('./routes');
 
 //connect to mongoose
 mongoose.connect('mongodb://localhost/freshoj');
@@ -15,14 +16,7 @@ app.get('/', function(req, res){
     res.send('Hello World');
 });
 
-app.get('/api/manufacturers', function(req, res){
-    Manufacturer.getManufacturer(function(err, manufacturers){
-        if(err) {
-            throw err;
-        }
-        res.json(manufacturers);
-    });
-});
+app.use('/api', routes);
 
 app.put('/api/manufacturers/:_id', function(req, res){
     let id = req.params.id;
